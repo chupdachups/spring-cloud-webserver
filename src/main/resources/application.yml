@@ -1,0 +1,16 @@
+server:
+  port: ${port:5011}
+
+spring:
+  application:
+    name: webserver
+  config:
+     import: "optional:configserver:"    # config server를 지정하지 않으면 default localhost:8888, 아래 sping.cloud.config.uri 보다 우선시 한다.
+#     import: "optional:configserver:http://localhost:9001"
+  profiles:
+    active: ${profile:local}
+    include: common
+  cloud: 
+    config:
+      uri: ${config_servers:http://localhost:9001}
+      label: main
