@@ -32,7 +32,7 @@ public class WebserverController {
 		
         log.info("### Received: /webclient/" + param);
 		
-		String msg = "("+headers.get("host")+":"+port+")"+param + " => Working successfully !!!";
+		String msg = "("+headers.get("host")+":"+port+")"+param + " => Working successfully !!! \n";
 		log.info("### Sent: " + msg);
 		return msg;
 	}
