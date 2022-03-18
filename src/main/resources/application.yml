@@ -13,4 +13,4 @@ spring:
   cloud: 
     config:
       uri: ${config_servers:http://localhost:9001}
-      label: main
+      label: add_k8s
