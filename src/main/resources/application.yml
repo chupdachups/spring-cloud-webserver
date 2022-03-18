@@ -15,4 +15,4 @@ spring:
       uri: ${config_servers:http://localhost:9001}
       label: ${config_label:main}
       
-k8s.pod.hostname: ${HOSTNAME}
+k8s.pod.hostname: ${HOSTNAME:webserver}

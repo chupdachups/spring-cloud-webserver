@@ -38,7 +38,7 @@ public class WebserverController {
 		String msg = "("+headers.get("host")+":"+port+")"+param + " => Working successfully !!! \n";
 		String msg1 = "Service name: " + headers.get("host")+"\n";
 		String msg2 = "Service port: " + port + "\n";
-		String msg3 = "Host name   :" + hostname + "\n";
+		String msg3 = "Host name: " + hostname + "\n";
 		String msg4 = "=> Working successfully !!! \n";
 		
 		log.info("### Sent: " + msg);
