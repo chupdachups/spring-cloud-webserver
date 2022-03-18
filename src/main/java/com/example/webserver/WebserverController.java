@@ -17,6 +17,9 @@ public class WebserverController {
 	
 	@Value("${server.port}")
 	int port;
+	
+	@Value("${k8s.pod.hostname}")
+	String hostname;
 
     @GetMapping("/webclient/{param}")
 	public String testWebClient(
@@ -33,8 +36,13 @@ public class WebserverController {
         log.info("### Received: /webclient/" + param);
 		
 		String msg = "("+headers.get("host")+":"+port+")"+param + " => Working successfully !!! \n";
+		String msg1 = "Service name: " + headers.get("host")+"\n";
+		String msg2 = "Service port: " + port + "\n";
+		String msg3 = "Host name   :" + hostname + "\n";
+		String msg4 = "=> Working successfully !!! \n";
+		
 		log.info("### Sent: " + msg);
-		return msg;
+		return msg1 + msg2 + msg3 + msg4;
 	}
     
     @GetMapping("/testSCCB/{param}")
